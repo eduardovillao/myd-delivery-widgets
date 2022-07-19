@@ -126,7 +126,7 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 			'filter_type' => $settings[ self::$prefix . '_filter_search_type' ],
 		);
 
-		if ( class_exists( 'Fdm_products_show' ) ) {
+		if ( class_exists( 'MydPro\Includes\Fdm_products_show' ) ) {
 			$delivey_template = new Fdm_products_show();
 			echo $delivey_template->fdm_list_products_html( $args );
 		} else {
