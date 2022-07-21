@@ -72,12 +72,12 @@ final class Plugin {
 	 * @return void
 	 */
 	public function init() {
-		if ( did_action( 'myd_delivery_pro_init' ) ) {
+		if ( ! did_action( 'myd_delivery_pro_init' ) ) {
 			add_action( 'admin_notices', array( $this, 'admin_notice_require_myd' ) );
 			return;
 		}
 		
-		if ( did_action( 'elementor/loaded' ) ) {
+		if ( ! did_action( 'elementor/loaded' ) ) {
 			add_action( 'admin_notices', array( $this, 'admin_notice_require_elemento' ) );
 			return;
 		}
