@@ -126,7 +126,7 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 			'filter_type' => $settings[ self::$prefix . '_filter_search_type' ],
 		);
 
-		if( defined( MYD_CURRENT_VERSION ) && version_compare( MYD_CURRENT_VERSION, '1.9.15', '>=' ) ) {
+		if( defined( '\MYD_CURRENT_VERSION' ) && version_compare( \MYD_CURRENT_VERSION, '1.9.15', '<' ) ) {
 			echo __( 'To use this widget you need MyD Delivery Pro version 1.9.15 or later.', 'myd-delivery-widgets' );
 			return;
 		}
