@@ -78,7 +78,7 @@ final class Plugin {
 		}
 		
 		if ( ! did_action( 'elementor/loaded' ) ) {
-			add_action( 'admin_notices', array( $this, 'admin_notice_require_elemento' ) );
+			add_action( 'admin_notices', array( $this, 'admin_notice_require_elementor' ) );
 			return;
 		}
 
