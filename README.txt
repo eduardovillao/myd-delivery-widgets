@@ -13,7 +13,7 @@ MyD Delivery Widgets create some Elementor Widgets to use together with the plug
 
 == Description ==
 
-Available Widgets:
+#### Available Widgets:
 * MyD Delivery Page - to show products, card, and all you need to receive orders.
 * MyD Order Management - to manage active orders, change status, print orders and more. (SOON!)
 * Myd User Order Track - to display order to user tracking. (SOON!)
@@ -24,7 +24,7 @@ Available Widgets:
 
 MyD Delivery plugin is a complete system to delivery with products, orders, support to send order on WhatsApp and more!
 
-To know more [check our website](https://myddelivery.com/)
+To know [check our website](https://myddelivery.com/)
 
 == More plugins? ==
 
