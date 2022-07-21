@@ -126,11 +126,17 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 			'filter_type' => $settings[ self::$prefix . '_filter_search_type' ],
 		);
 
+		if( defined( MYD_CURRENT_VERSION ) && version_compare( MYD_CURRENT_VERSION, '1.9.15', '>=' ) ) {
+			echo __( 'To use this widget you need MyD Delivery Pro version 1.9.15 or later.', 'myd-delivery-widgets' );
+			return;
+		}
+
 		if ( class_exists( 'MydPro\Includes\Fdm_products_show' ) ) {
 			$delivey_template = new Fdm_products_show();
 			echo $delivey_template->fdm_list_products_html( $args );
-		} else {
-			echo 'Please, install MyD Delivery Pro to use this widget.';
+			return;
 		}
+
+		echo __( 'Please, install MyD Delivery Pro to use this widget.', 'myd-delivery-widgets' );
 	}
 }

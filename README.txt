@@ -4,7 +4,7 @@ Donate link: https://eduardovillao.me/
 Tags: delivery, elementor widget, widgets
 Requires at least: 5.4
 Tested up to: 6.0
-Stable tag: 1.0.3
+Stable tag: 1.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,18 @@ MyD Delivery Widgets create some Elementor Widgets to use together with the plug
 
 == Description ==
 
-MyD Delivery Widgets create Elementor widgets to delivery plugin MyD Delivery.
+Available Widgets:
+* MyD Delivery Page - to show products, card, and all you need to receive orders.
+* MyD Order Management - to manage active orders, change status, print orders and more. (SOON!)
+* Myd User Order Track - to display order to user tracking. (SOON!)
+
+> This plugins works only with MyD Delivery version 1.9.15 or later.
+
+== Do you know MyD Delivery plugin? ==
+
+MyD Delivery plugin is a complete system to delivery with products, orders, support to send order on WhatsApp and more!
+
+To know more [check our website](https://myddelivery.com/)
 
 == More plugins? ==
 
@@ -43,9 +54,17 @@ Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
 
 No. This plugin require MyD Delivery Pro version 1.9.15 or later.
 
+= The plugin MyD Delivery has a free verion? =
+
+No yet, but soon will be launch! We are working in a free version and soon we will launch on WordPress plugin directory.
+
 == Screenshots ==
 
 == Changelog ==
+
+= 1.1 =
+* New: verify MyD Delivery version installed.
+* New: add new style controls to MyD Delivery Page widget.
 
 = 1.0 =
 * New: Initial release.
