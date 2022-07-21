@@ -1,7 +1,7 @@
-=== MyD Delivery Pro ===
+=== MyD Delivery Widgets ===
 Contributors: evcode
 Donate link: https://eduardovillao.me/
-Tags: delivery, wordpress delivery, delivery whatsapp
+Tags: delivery, elementor widget, widgets
 Requires at least: 5.4
 Tested up to: 6.0
 Stable tag: 1.0
