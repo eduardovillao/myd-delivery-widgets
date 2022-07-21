@@ -88,6 +88,9 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function register_controls() {
+		/**
+		 * Filter and search - content
+		 */
 		$this->start_controls_section(
 			self::$prefix . '_filter_search_content_section',
 			[
@@ -103,11 +106,72 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Type', 'myd-delivery-widgets' ),
 				'options' => [
 					'complete' => esc_html__( 'Complete', 'myd-delivery-widgets' ),
-					'filter' => esc_html__( 'Only filter', 'myd-delivery-widgets' ),
-					'search' => esc_html__( 'Only search', 'myd-delivery-widgets' ),
-					'hide' => esc_html__( 'Hide', 'myd-delivery-widgets' ),
+					'hide_filter' => esc_html__( 'Hide filter', 'myd-delivery-widgets' ),
+					'hide_search' => esc_html__( 'Hide search', 'myd-delivery-widgets' ),
+					'hide' => esc_html__( 'Hide all', 'myd-delivery-widgets' ),
 				],
 				'default' => 'complete',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Product grid - content
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_product_grid_content_section',
+			[
+				'label' => esc_html__( 'Product Grid', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_product_grid_columns',
+			[
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'label' => esc_html__( 'Columns', 'myd-delivery-widgets' ),
+				'options' => [
+					'1' => esc_html__( '1 column', 'myd-delivery-widgets' ),
+					'2' => esc_html__( '2 columns', 'myd-delivery-widgets' ),
+					'3' => esc_html__( '3 columns', 'myd-delivery-widgets' ),
+				],
+				'desktop_default' => '2',
+				'tablet_default' => '1',
+				'mobile_default' => '1',
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-list' => 'grid-template-columns: repeat({{VALUE}},1fr);',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_product_grid_gap',
+			[
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'label' => esc_html__( 'Gap', 'myd-delivery-widgets' ),
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					],
+				],
+				'desktop_default' => [
+					'size' => 20,
+					'unit' => 'px',
+				],
+				'tablet_default' => [
+					'size' => 20,
+					'unit' => 'px',
+				],
+				'mobile_default' => [
+					'size' => 20,
+					'unit' => 'px',
+				],
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-list' => 'grid-gap: {{SIZE}}px;',
+				],
 			]
 		);
 

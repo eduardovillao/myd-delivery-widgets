@@ -24,7 +24,7 @@ define( 'MYDW_PLUGN_URL', plugin_dir_url( __FILE__ ) );
 define( 'MYDW_PLUGIN_MAIN_FILE', __FILE__ );
 define( 'MYDW_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'MYDW_PLUGIN_DIRNAME', plugin_basename( __DIR__ ) );
-define( 'MYDW_CURRENT_VERSION', '1.0.3' );
+define( 'MYDW_CURRENT_VERSION', '1.1' );
 define( 'MYDW_MINIMUM_PHP_VERSION', '7.0' );
 define( 'MYDW_MINIMUM_WP_VERSION', '5.4' );
 define( 'MYDW_PLUGIN_NAME', 'MyD Delivery Widgets' );

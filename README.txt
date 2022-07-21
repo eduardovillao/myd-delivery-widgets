@@ -63,8 +63,8 @@ No yet, but soon will be launch! We are working in a free version and soon we wi
 == Changelog ==
 
 = 1.1 =
-* New: verify MyD Delivery version installed.
-* New: add new style controls to MyD Delivery Page widget.
+* New: verify required plugins are installed (MyD Delivery + Elementor).
+* New: add new content controls to filter & seach and product grid.
 
 = 1.0 =
 * New: Initial release.
