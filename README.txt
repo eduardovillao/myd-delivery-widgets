@@ -4,7 +4,7 @@ Donate link: https://eduardovillao.me/
 Tags: delivery, elementor widget, widgets
 Requires at least: 5.4
 Tested up to: 6.0
-Stable tag: 1.2
+Stable tag: 1.3
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,16 @@ No yet, but soon will be launch! We are working in a free version and soon we wi
 == Screenshots ==
 
 == Changelog ==
+
+= 1.3 =
+* New: style controls to Product title.
+* New: style controls to Product description.
+* New: style controls to Product price.
+* New: style controls to Product button.
+* New: style controls to Product popup.
+* New: style controls to Cart float button.
+* New: style controls to Side card navigation.
+* New: style controls to Side card content.
 
 = 1.2 =
 * New: add style controls to filter & seach and product card.

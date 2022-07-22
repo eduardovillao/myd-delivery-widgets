@@ -178,6 +178,52 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 		$this->end_controls_section();
 
 		/**
+		 * Product card - content
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_product_card_content_section',
+			[
+				'label' => esc_html__( 'Product card', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_product_card_img_align',
+			[
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'label' => esc_html__( 'Image alignment', 'myd-delivery-widgets' ),
+				'options' => [
+					'row' => esc_html__( 'Right', 'myd-delivery-widgets' ),
+					'row-reverse' => esc_html__( 'Left', 'myd-delivery-widgets' ),
+				],
+				'default' => 'row',
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item' => 'flex-direction: {{VALEU}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_product_card_items_gap',
+			[
+				'type' => \Elementor\Controls_Manager::SLIDER,
+				'label' => esc_html__( 'Itemns gap', 'myd-delivery-widgets' ),
+				'range' => [
+					'px' => [
+						'min' => 0,
+						'max' => 100,
+					]
+				],
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item' => 'gap: {{SIZE}}px;',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
 		 * Filter and search - style
 		 */
 		$this->start_controls_section(
@@ -327,6 +373,376 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 				'name' => self::$prefix . '_product_card_border',
 				'label' => esc_html__( 'Border', 'myd-delivery-widgets' ),
 				'selector' => '{{WRAPPER}} .myd-product-item',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Product title - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_product_title_style_section',
+			[
+				'label' => esc_html__( 'Product title', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_product_title_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Color', 'myd-delivery-widgets' ),
+				'default' => '#000',
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item__title' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => self::$prefix . '_product_title_font',
+				'selector' => '{{WRAPPER}} .myd-product-item__title',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Product description - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_product_description_style_section',
+			[
+				'label' => esc_html__( 'Product description', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_product_description_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Color', 'myd-delivery-widgets' ),
+				'default' => '#717171',
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item__desc' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => self::$prefix . '_product_description_font',
+				'selector' => '{{WRAPPER}} .myd-product-item__desc',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Product price - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_product_price_style_section',
+			[
+				'label' => esc_html__( 'Product price', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_product_price_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Color', 'myd-delivery-widgets' ),
+				'default' => '#000',
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item__price' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => self::$prefix . '_product_price_font',
+				'selector' => '{{WRAPPER}} .myd-product-item__price',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Product button - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_product_button_style_section',
+			[
+				'label' => esc_html__( 'Product button', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_product_button_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Color', 'myd-delivery-widgets' ),
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item__button' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_product_button_margin',
+			[
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'label' => esc_html__( 'Margin', 'myd-delivery-widgets' ),
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item__button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Product popup - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_product_popup_style_section',
+			[
+				'label' => esc_html__( 'Product popup', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_product_popup_background',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Background', 'myd-delivery-widgets' ),
+				'selectors' => [
+					'{{WRAPPER}} .fdm-popup-product-content' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .fdm-popup-product-action' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_product_popup_button_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Button color', 'myd-delivery-widgets' ),
+				'selectors' => [
+					'{{WRAPPER}} .fdm-add-to-cart-popup' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_product_popup_padding',
+			[
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'label' => esc_html__( 'Padding', 'myd-delivery-widgets' ),
+				'size_units' => [ 'px', '%', 'em' ],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '20',
+					'left' => '20',
+					'unit' => 'px',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .fdm-popup-product-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_product_popup_border_radius',
+			[
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'label' => esc_html__( 'Border radius', 'myd-delivery-widgets' ),
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .fdm-popup-product-content' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => self::$prefix . '_product_popup_box_shadow',
+				'label' => esc_html__( 'Box Shadow', 'myd-delivery-widgets' ),
+				'selector' => '{{WRAPPER}} .fdm-popup-product-content',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => self::$prefix . '_product_popup_border',
+				'label' => esc_html__( 'Border', 'myd-delivery-widgets' ),
+				'selector' => '{{WRAPPER}} .fdm-popup-product-content',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Cart float button - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_cart_float_button_style_section',
+			[
+				'label' => esc_html__( 'Cart float button', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_cart_float_button_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Background', 'myd-delivery-widgets' ),
+				'selectors' => [
+					'{{WRAPPER}} .myd-float' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_cart_float_button_padding',
+			[
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'label' => esc_html__( 'Padding', 'myd-delivery-widgets' ),
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .myd-float' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => self::$prefix . '_cart_float_button_font',
+				'selector' => '{{WRAPPER}} .myd-float__title',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => self::$prefix . '_cart_float_button_box_shadow',
+				'label' => esc_html__( 'Box Shadow', 'myd-delivery-widgets' ),
+				'selector' => '{{WRAPPER}} .myd-float',
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_cart_float_button_border_radius',
+			[
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'label' => esc_html__( 'Border radius', 'myd-delivery-widgets' ),
+				'size_units' => [ 'px', '%', 'em' ],
+				'selectors' => [
+					'{{WRAPPER}} .myd-float' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => self::$prefix . '_cart_float_button_border',
+				'label' => esc_html__( 'Border', 'myd-delivery-widgets' ),
+				'selector' => '{{WRAPPER}} .myd-float',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Side cart navigation - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_side_cart_navigation_style_section',
+			[
+				'label' => esc_html__( 'Side cart navigation', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_side_cart_navigation_background',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Background', 'myd-delivery-widgets' ),
+				'selectors' => [
+					'{{WRAPPER}} .myd-cart__nav' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_side_cart_navigation_buttons_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Buttons color', 'myd-delivery-widgets' ),
+				'selectors' => [
+					'{{WRAPPER}} .myd-cart__nav-back' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .myd-cart__nav-close' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .myd-cart__nav--active svg' => 'fill: {{VALUE}} !important;',
+					'{{WRAPPER}} .myd-cart__nav--active .myd-cart__nav-desc' => 'color: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Side cart content - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_side_cart_content_style_section',
+			[
+				'label' => esc_html__( 'Side cart content', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_side_cart_content_background',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Background', 'myd-delivery-widgets' ),
+				'selectors' => [
+					'{{WRAPPER}} .myd-cart__content' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_side_cart_content_buttons_color',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Buttons color', 'myd-delivery-widgets' ),
+				'selectors' => [
+					'{{WRAPPER}} .myd-cart__button' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .myd-cart__checkout-option--active' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .myd-cart__finished-track-order' => 'background: {{VALUE}};',
+				],
 			]
 		);
 
