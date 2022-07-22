@@ -17,7 +17,7 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 	/**
 	 * Prefix to prevent name conflics.
 	 */
-	protected static $prefix = 'myd-delivery-page';
+	protected static $prefix = 'myd_delivery_page';
 
 	/**
 	 * Get widget name.
@@ -172,6 +172,161 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 				'selectors' => [
 					'{{WRAPPER}} .myd-product-list' => 'grid-gap: {{SIZE}}px;',
 				],
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Filter and search - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_filter_search_style_section',
+			[
+				'label' => esc_html__( 'Filter & Search container', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+				'conditions' => [
+					'terms' => [
+						[
+							'name' => self::$prefix . '_filter_search_type',
+							'operator' => '!==',
+							'value' => 'hide',
+						],
+					],
+				],
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_filter_search_container_background',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Background', 'myd-delivery-widgets' ),
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .myd-content-filter' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_filter_search_container_padding',
+			[
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'label' => esc_html__( 'Padding', 'myd-delivery-widgets' ),
+				'size_units' => [ 'px', '%', 'em' ],
+				'default' => [
+					'top' => '12',
+					'right' => '12',
+					'bottom' => '12',
+					'left' => '12',
+					'unit' => 'px',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .myd-content-filter' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_filter_search_container_margin',
+			[
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'label' => esc_html__( 'Margin', 'myd-delivery-widgets' ),
+				'size_units' => [ 'px', '%', 'em' ],
+				'default' => [
+					'top' => '0',
+					'right' => '0',
+					'bottom' => '20',
+					'left' => '0',
+					'unit' => 'px',
+					'isLinked' => false,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .myd-content-filter' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => self::$prefix . '_filter_search_container_box_shadow',
+				'label' => esc_html__( 'Box Shadow', 'myd-delivery-widgets' ),
+				'selector' => '{{WRAPPER}} .myd-content-filter',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => self::$prefix . '_filter_search_container_border',
+				'label' => esc_html__( 'Border', 'myd-delivery-widgets' ),
+				'selector' => '{{WRAPPER}} .myd-content-filter',
+			]
+		);
+
+		$this->end_controls_section();
+
+		/**
+		 * Product card - style
+		 */
+		$this->start_controls_section(
+			self::$prefix . '_product_card_style_section',
+			[
+				'label' => esc_html__( 'Product card', 'myd-delivery-widgets' ),
+				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_product_card__background',
+			[
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'label' => esc_html__( 'Background', 'myd-delivery-widgets' ),
+				'default' => '#fff',
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item' => 'background: {{VALUE}};',
+				],
+			]
+		);
+
+		$this->add_responsive_control(
+			self::$prefix . '_product_card_padding',
+			[
+				'type' => \Elementor\Controls_Manager::DIMENSIONS,
+				'label' => esc_html__( 'Padding', 'myd-delivery-widgets' ),
+				'size_units' => [ 'px', '%', 'em' ],
+				'default' => [
+					'top' => '20',
+					'right' => '20',
+					'bottom' => '20',
+					'left' => '20',
+					'unit' => 'px',
+					'isLinked' => true,
+				],
+				'selectors' => [
+					'{{WRAPPER}} .myd-product-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
+				],
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => self::$prefix . '_product_card_box_shadow',
+				'label' => esc_html__( 'Box Shadow', 'myd-delivery-widgets' ),
+				'selector' => '{{WRAPPER}} .myd-product-item',
+			]
+		);
+
+		$this->add_group_control(
+			\Elementor\Group_Control_Border::get_type(),
+			[
+				'name' => self::$prefix . '_product_card_border',
+				'label' => esc_html__( 'Border', 'myd-delivery-widgets' ),
+				'selector' => '{{WRAPPER}} .myd-product-item',
 			]
 		);
 

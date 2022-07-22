@@ -4,7 +4,7 @@ Donate link: https://eduardovillao.me/
 Tags: delivery, elementor widget, widgets
 Requires at least: 5.4
 Tested up to: 6.0
-Stable tag: 1.1
+Stable tag: 1.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,9 @@ No yet, but soon will be launch! We are working in a free version and soon we wi
 == Screenshots ==
 
 == Changelog ==
+
+= 1.2 =
+* New: add style controls to filter & seach and product card.
 
 = 1.1 =
 * New: verify required plugins are installed (MyD Delivery + Elementor).
