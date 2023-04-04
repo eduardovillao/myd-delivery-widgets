@@ -5,7 +5,7 @@ namespace Myd_Widgets\Includes\Widgets;
 use MydPro\Includes\Fdm_products_show;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }
 
 /**
@@ -472,42 +472,6 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 			[
 				'name' => self::$prefix . '_product_price_font',
 				'selector' => '{{WRAPPER}} .myd-product-item__price',
-			]
-		);
-
-		$this->end_controls_section();
-
-		/**
-		 * Product button - style
-		 */
-		$this->start_controls_section(
-			self::$prefix . '_product_button_style_section',
-			[
-				'label' => esc_html__( 'Product button', 'myd-delivery-widgets' ),
-				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-			]
-		);
-
-		$this->add_control(
-			self::$prefix . '_product_button_color',
-			[
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'label' => esc_html__( 'Color', 'myd-delivery-widgets' ),
-				'selectors' => [
-					'{{WRAPPER}} .myd-product-item__button' => 'background: {{VALUE}};',
-				],
-			]
-		);
-
-		$this->add_responsive_control(
-			self::$prefix . '_product_button_margin',
-			[
-				'type' => \Elementor\Controls_Manager::DIMENSIONS,
-				'label' => esc_html__( 'Margin', 'myd-delivery-widgets' ),
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors' => [
-					'{{WRAPPER}} .myd-product-item__button' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
-				],
 			]
 		);
 
