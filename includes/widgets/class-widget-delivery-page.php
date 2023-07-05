@@ -80,6 +80,29 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 	}
 
 	/**
+	 * Get product categories to use on select option
+	 *
+	 * @return array
+	 */
+	public function get_product_categories_options() {
+		$product_categories = get_option( 'fdm-list-menu-categories' );
+		if ( empty( $product_categories ) ) {
+			return array();
+		}
+
+		$product_categories = explode( ",", $product_categories );
+		$product_categories = array_map( 'trim', $product_categories );
+		$product_categories_options = array(
+			'all' => esc_html__( 'All Categories', 'myd-delivery-widgets' ),
+		);
+		foreach ( $product_categories as $category ) {
+			$product_categories_options[ $category ] = $category;
+		}
+
+		return $product_categories_options;
+	}
+
+	/**
 	 * Register list widget controls.
 	 *
 	 * Add input fields to allow the user to customize the widget settings.
@@ -111,6 +134,16 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 					'hide' => esc_html__( 'Hide all', 'myd-delivery-widgets' ),
 				],
 				'default' => 'complete',
+			]
+		);
+
+		$this->add_control(
+			self::$prefix . '_filter_search_product_category',
+			[
+				'type' => \Elementor\Controls_Manager::SELECT,
+				'label' => esc_html__( 'Product Category', 'myd-delivery-widgets' ),
+				'options' => $this->get_product_categories_options(),
+				'default' => 'all',
 			]
 		);
 
@@ -723,6 +756,7 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 		$settings = $this->get_settings_for_display();
 		$args = array(
 			'filter_type' => $settings[ self::$prefix . '_filter_search_type' ],
+			'product_category' => $settings[ self::$prefix . '_filter_search_product_category' ],
 		);
 
 		if( defined( '\MYD_CURRENT_VERSION' ) && version_compare( \MYD_CURRENT_VERSION, '1.9.15', '<' ) ) {
