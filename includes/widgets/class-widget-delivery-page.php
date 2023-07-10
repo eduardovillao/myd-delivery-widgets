@@ -85,6 +85,12 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 	 * @return array
 	 */
 	public function get_product_categories_options() {
+		if( version_compare( MYD_CURRENT_VERSION, '1.9.41', '<' ) ) {
+			return array(
+				'all' => esc_html__( 'All Categories', 'myd-delivery-widgets' ),
+			);
+		}
+
 		$product_categories = get_option( 'fdm-list-menu-categories' );
 		if ( empty( $product_categories ) ) {
 			return array();
@@ -144,6 +150,7 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Product Category', 'myd-delivery-widgets' ),
 				'options' => $this->get_product_categories_options(),
 				'default' => 'all',
+				'description' => esc_html__( 'This control requires MyD Delivery Pro version 1.9.41 or greater to work and show the options.', 'myd-delivery-widgets' ),
 			]
 		);
 
