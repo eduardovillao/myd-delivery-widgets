@@ -85,7 +85,7 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 	 * @return array
 	 */
 	public function get_product_categories_options() {
-		if( version_compare( MYD_CURRENT_VERSION, '1.9.41', '<' ) ) {
+		if( defined( '\MYD_CURRENT_VERSION' ) && version_compare( \MYD_CURRENT_VERSION, '1.9.41', '<' ) ) {
 			return array(
 				'all' => esc_html__( 'All Categories', 'myd-delivery-widgets' ),
 			);
