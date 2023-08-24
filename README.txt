@@ -3,8 +3,8 @@ Contributors: evcode
 Donate link: https://eduardovillao.me/
 Tags: delivery, elementor widget, widgets
 Requires at least: 5.4
-Tested up to: 6.2
-Stable tag: 1.5
+Tested up to: 6.3
+Stable tag: 1.5.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,10 @@ No yet, but soon will be launch! We are working in a free version and soon we wi
 == Screenshots ==
 
 == Changelog ==
+
+= 1.5.1 =
+* Changed: support to WordPress 6.3.
+* Changed: code improvements.
 
 = 1.5 =
 * New: control do add product by category - requires MyD Delivery Pro version 1.9.41 or greater.
