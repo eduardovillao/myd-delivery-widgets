@@ -80,6 +80,15 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 	}
 
 	/**
+	 * Style depends
+	 *
+	 * @return void
+	 */
+	public function get_style_depends() {
+		return [ 'myd-delivery-frontend' ];
+	}
+
+	/**
 	 * Get product categories to use on select option
 	 *
 	 * @return array
