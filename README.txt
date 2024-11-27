@@ -1,10 +1,10 @@
 === MyD Delivery Widgets ===
 Contributors: evcode
 Donate link: https://eduardovillao.me/
-Tags: delivery, elementor widget, widgets
+Tags: delivery, elementor, myd delivery
 Requires at least: 5.4
 Tested up to: 6.7
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -61,6 +61,9 @@ No yet, but soon will be launch! We are working in a free version and soon we wi
 == Screenshots ==
 
 == Changelog ==
+
+= 1.6.2 =
+* Changed: code improvements.
 
 = 1.6.1 =
 * Changed: compatibility with WordPress 6.7.

@@ -5,7 +5,7 @@
  * Description: MyD Delivery Widgets create Elementor widgets to delivery plugin MyD Delivery.
  * Author: EduardoVillao.me
  * Author URI: https://eduardovillao.me/
- * Version: 1.6.1
+ * Version: 1.6.2
  * Requires PHP: 7.4
  * Requires at least: 5.4
  * Text Domain: myd-delivery-widgets
@@ -24,7 +24,7 @@ define( 'MYDW_PLUGN_URL', plugin_dir_url( __FILE__ ) );
 define( 'MYDW_PLUGIN_MAIN_FILE', __FILE__ );
 define( 'MYDW_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'MYDW_PLUGIN_DIRNAME', plugin_basename( __DIR__ ) );
-define( 'MYDW_CURRENT_VERSION', '1.6.1' );
+define( 'MYDW_CURRENT_VERSION', '1.6.2' );
 define( 'MYDW_MINIMUM_PHP_VERSION', '7.4' );
 define( 'MYDW_MINIMUM_WP_VERSION', '5.4' );
 define( 'MYDW_PLUGIN_NAME', 'MyD Delivery Widgets' );
@@ -35,13 +35,11 @@ define( 'MYDW_PLUGIN_NAME', 'MyD Delivery Widgets' );
  * @since 1.0
  */
 if ( ! version_compare( PHP_VERSION, MYDW_MINIMUM_PHP_VERSION, '>=' ) ) {
-
 	add_action( 'admin_notices', 'mydp_admin_notice_php_version_fail' );
 	return;
 }
 
 if ( ! version_compare( get_bloginfo( 'version' ), MYDW_MINIMUM_WP_VERSION, '>=' ) ) {
-
 	add_action( 'admin_notices', 'mydp_admin_notice_wp_version_fail' );
 	return;
 }
@@ -56,7 +54,6 @@ Myd_Widgets\Includes\Plugin::instance();
  * @return void
  */
 function mydw_admin_notice_php_version_fail() {
-
 	$message = sprintf(
 		esc_html__( '%1$s requires PHP version %2$s or greater.', 'myd-delivery-widgets' ),
 		'<strong>MyD Delivery Widgets</strong>',
@@ -64,7 +61,6 @@ function mydw_admin_notice_php_version_fail() {
 	);
 
 	$html_message = sprintf( '<div class="notice notice-error"><p>%1$s</p></div>', $message );
-
 	echo wp_kses_post( $html_message );
 }
 
@@ -75,7 +71,6 @@ function mydw_admin_notice_php_version_fail() {
  * @return void
  */
 function mydw_admin_notice_wp_version_fail() {
-
 	$message = sprintf(
 		esc_html__( '%1$s requires WordPress version %2$s or greater.', 'myd-delivery-widgets' ),
 		'<strong>MyD Delivery Widgets</strong>',
@@ -83,6 +78,5 @@ function mydw_admin_notice_wp_version_fail() {
 	);
 
 	$html_message = sprintf( '<div class="notice notice-error"><p>%1$s</p></div>', $message );
-
 	echo wp_kses_post( $html_message );
 }
