@@ -2,12 +2,12 @@
 Contributors: evcode
 Donate link: https://eduardovillao.me/
 Tags: delivery, elementor, myd delivery
-Requires at least: 5.4
-Tested up to: 6.7
-Stable tag: 1.6.2
+Requires at least: 5.5
+Tested up to: 6.8
+Stable tag: 1.7
 Requires PHP: 7.4
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+License: GPL-3.0+
+License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 MyD Delivery Widgets create some Elementor Widgets to use together with the plugin MyD Delivery.
 
@@ -61,6 +61,11 @@ No yet, but soon will be launch! We are working in a free version and soon we wi
 == Screenshots ==
 
 == Changelog ==
+
+= 1.7 =
+* Changed: compatibility with MyD Delivery free version.
+* Changed: compatibility with latest MyD Delivery Pro version.
+* Changed: code improvements.
 
 = 1.6.2 =
 * Changed: code improvements.

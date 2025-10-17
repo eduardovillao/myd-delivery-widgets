@@ -5,7 +5,7 @@ namespace Myd_Widgets\Includes;
 use Myd_Widgets\Includes\Register_Elementor_Widgets;
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+	exit;
 }
 
 /**
@@ -62,7 +62,20 @@ final class Plugin {
 	 * @return void
 	 */
 	private function __construct() {
-		add_action( 'plugins_loaded', array( $this, 'init' ) );
+		\add_action( 'myddelivery_after_init', array( $this, 'init' ) );
+		\add_action( 'plugins_loaded', [ $this, 'check_requirements' ] );
+	}
+
+	/**
+	 * Check requirements
+	 *
+	 * @return void
+	 */
+	public function check_requirements() {
+		if ( ! \did_action( 'myddelivery_loaded' ) ) {
+			\add_action( 'admin_notices', array( $this, 'admin_notice_require_myd' ) );
+			return;
+		}
 	}
 
 	/**
@@ -72,13 +85,8 @@ final class Plugin {
 	 * @return void
 	 */
 	public function init() {
-		if ( ! did_action( 'myd_delivery_pro_init' ) ) {
-			add_action( 'admin_notices', array( $this, 'admin_notice_require_myd' ) );
-			return;
-		}
-		
-		if ( ! did_action( 'elementor/loaded' ) ) {
-			add_action( 'admin_notices', array( $this, 'admin_notice_require_elementor' ) );
+		if ( ! \did_action( 'elementor/loaded' ) ) {
+			\add_action( 'admin_notices', array( $this, 'admin_notice_require_elementor' ) );
 			return;
 		}
 
@@ -112,11 +120,17 @@ final class Plugin {
 	 */
 	function admin_notice_require_myd() {
 		$message = sprintf(
-			esc_html__( '%1$s requires MyD Delivery Pro installed and activated.', 'myd-delivery-widgets' ),
-			'<strong>MyD Delivery Widgets</strong>'
+			/* translators: plugin name won't be translated */
+			esc_html__( '%1$s requires %2$s free version installed and activated.', 'myd-delivery-widgets' ),
+			'<strong>MyD Delivery Widgets</strong>',
+			'<strong>Myd Delivery</strong>',
+			esc_html__( 'Click here to install', 'myd-delivery-widgets' )
 		);
 
-		$html_message = sprintf( '<div class="notice notice-error"><p>%1$s</p></div>', $message );
+		$html_message = sprintf( '<div class="notice notice-error mydd-notice"><p>%1$s <a href="/wp-admin/plugin-install.php?tab=plugin-information&plugin=myd-delivery&TB_iframe=true&width=772&height=1174">%2$s</a></p></div>',
+			$message,
+			esc_html__( 'Click here to install', 'myd-delivery-widgets' )
+		);
 
 		echo wp_kses_post( $html_message );
 	}

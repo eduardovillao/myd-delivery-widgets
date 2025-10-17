@@ -5,12 +5,13 @@
  * Description: MyD Delivery Widgets create Elementor widgets to delivery plugin MyD Delivery.
  * Author: EduardoVillao.me
  * Author URI: https://eduardovillao.me/
- * Version: 1.6.2
+ * Version: 1.7
  * Requires PHP: 7.4
- * Requires at least: 5.4
+ * Requires at least: 5.5
  * Text Domain: myd-delivery-widgets
- * License: GPL-2.0+
- * License URI: https://www.gnu.org/licenses/gpl-2.0.txt
+* License: GPL-3.0+
+ * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
+ * Requires Plugins: myd-delivery
  *
  * @package Myd_Delivery_Widgets
  */
@@ -24,7 +25,7 @@ define( 'MYDW_PLUGN_URL', plugin_dir_url( __FILE__ ) );
 define( 'MYDW_PLUGIN_MAIN_FILE', __FILE__ );
 define( 'MYDW_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
 define( 'MYDW_PLUGIN_DIRNAME', plugin_basename( __DIR__ ) );
-define( 'MYDW_CURRENT_VERSION', '1.6.2' );
+define( 'MYDW_CURRENT_VERSION', '1.7' );
 define( 'MYDW_MINIMUM_PHP_VERSION', '7.4' );
 define( 'MYDW_MINIMUM_WP_VERSION', '5.4' );
 define( 'MYDW_PLUGIN_NAME', 'MyD Delivery Widgets' );
