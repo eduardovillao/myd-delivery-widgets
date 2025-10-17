@@ -2,7 +2,7 @@
 
 namespace Myd_Widgets\Includes\Widgets;
 
-use MydPro\Includes\Fdm_products_show;
+use Myddelivery\Includes\Fdm_products_show;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -776,16 +776,16 @@ class Widget_Delivery_Page extends \Elementor\Widget_Base {
 		);
 
 		if( defined( '\MYD_CURRENT_VERSION' ) && version_compare( \MYD_CURRENT_VERSION, '1.9.15', '<' ) ) {
-			echo __( 'To use this widget you need MyD Delivery Pro version 1.9.15 or later.', 'myd-delivery-widgets' );
+			esc_html_e( 'To use this widget you need MyD Delivery Pro version 1.9.15 or later.', 'myd-delivery-widgets' );
 			return;
 		}
 
-		if ( class_exists( 'MydPro\Includes\Fdm_products_show' ) ) {
+		if ( class_exists( 'Myddelivery\Includes\Fdm_products_show' ) ) {
 			$delivey_template = new Fdm_products_show();
 			echo $delivey_template->fdm_list_products_html( $args );
 			return;
 		}
 
-		echo __( 'Please, install MyD Delivery Pro to use this widget.', 'myd-delivery-widgets' );
+		esc_html_e( 'Please, install MyD Delivery Pro to use this widget.', 'myd-delivery-widgets' );
 	}
 }
