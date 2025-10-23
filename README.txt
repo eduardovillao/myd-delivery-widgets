@@ -9,54 +9,49 @@ Requires PHP: 7.4
 License: GPL-3.0+
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
-MyD Delivery Widgets create some Elementor Widgets to use together with the plugin MyD Delivery.
+Add powerful Elementor widgets for the [MyD Delivery](https://myddelivery.com/) plugin — the complete WordPress delivery system for restaurants, cafés, bakeries, and local businesses.
 
 == Description ==
 
-#### Available Widgets:
-* MyD Delivery Page - to show products, card, and all you need to receive orders.
-* MyD Order Management - to manage active orders, change status, print orders and more. (SOON!)
-* Myd User Order Track - to display order to user tracking. (SOON!)
+**MyD Delivery Widgets** extends the functionality of the [MyD Delivery plugin](https://wordpress.org/plugins/myd-delivery/) by providing ready-to-use Elementor widgets.
+These widgets let you easily display your delivery menu, manage orders, and show order tracking pages directly in Elementor — no coding required.
 
-> This plugins works only with MyD Delivery version 1.9.15 or later.
+> ⚠️ **Requires MyD Delivery**
 
-== Do you know MyD Delivery plugin? ==
+### 🚀 Available Widgets
+- **MyD Delivery Page** – Display products, cart, and checkout areas for online orders.
+- **MyD Order Management** *(Coming Soon!)* – Manage active orders, update statuses, print receipts, and more.
+- **MyD User Order Track** *(Coming Soon!)* – Allow customers to track their orders in real time.
 
-MyD Delivery plugin is a complete system to delivery with products, orders, support to send order on WhatsApp and more!
+### 💡 Why use MyD Delivery Widgets?
+- Seamless Elementor integration
+- Ready-made design controls
+- Full compatibility with MyD Delivery
+- Lightweight and optimized for performance
 
-To know [check our website](https://myddelivery.com/)
+### 🔗 Learn more
+Visit the official site: [myddelivery.com](https://myddelivery.com/)
 
-== More plugins? ==
+== MyD Delivery Plugin ==
 
-Check my other plugins: [WordPress Plugins](https://eduardovillao.me/wordpress-plugins/)
+The [MyD Delivery plugin](https://myddelivery.com/) is a full delivery system built for WordPress — manage products, customers, and orders directly from your dashboard, and even send orders through WhatsApp.
 
-== WordPress Tips? ==
-
-Check my blog: [WordPress Tips](https://eduardovillao.me/blog/)
-
-== Plugins Suggestions? ==
-
-Please, send to me: [plugins@eduardovillao.me](mailto:plugins@eduardovillao.me)
+It’s the easiest way to sell online without relying on external marketplaces or complex e-commerce platforms.
 
 == Installation ==
 
-1. Upload the plugin files to the WordPress
-
-2. Activate the plugin in WordPress
-
-3. Go to Elementor editor and search for "MyD Delivery Page"
-
-4. Done, just customize your widet : )
+2. Activate **MyD Delivery Widgets** from the *Plugins* menu in WordPress.
+3. Ensure **MyD Delivery** and **Elementor** are active.
+4. Open Elementor and search for “**MyD Delivery Page**” widget.
+5. Drag it into your layout and start customizing! 🎨
 
 == Frequently Asked Questions ==
 
-= This plugins works with all versions of MyD Delivery? =
+= Does it work without the MyD Delivery plugin? =
+No. This plugin requires **MyD Delivery**.
 
-No. This plugin require MyD Delivery Pro version 1.9.15 or later.
-
-= The plugin MyD Delivery has a free verion? =
-
-No yet, but soon will be launch! We are working in a free version and soon we will launch on WordPress plugin directory.
+= Is there a free version of MyD Delivery? =
+Yes! The free version is available on the [WordPress Plugin Directory](https://wordpress.org/plugins/myd-delivery/).
 
 == Screenshots ==
 
