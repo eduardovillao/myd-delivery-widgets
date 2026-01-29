@@ -26,6 +26,9 @@ To know [check our website](https://myddelivery.com/)
 4. Done, just customize your widet : )
 
 ## Changelog
+= 1.8 =
+* Changed: code improvements.
+
 = 1.4 =
 * Changed: remove unused style control.
 * Changed: compatibility with WordPress 6.2.

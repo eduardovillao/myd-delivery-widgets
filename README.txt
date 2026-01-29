@@ -3,8 +3,8 @@ Contributors: evcode
 Donate link: https://eduardovillao.me/
 Tags: delivery, elementor, myd delivery
 Requires at least: 5.5
-Tested up to: 6.8
-Stable tag: 1.7
+Tested up to: 6.9
+Stable tag: 1.8
 Requires PHP: 7.4
 License: GPL-3.0+
 License URI: https://www.gnu.org/licenses/gpl-3.0.txt
@@ -56,6 +56,9 @@ Yes! The free version is available on the [WordPress Plugin Directory](https://w
 == Screenshots ==
 
 == Changelog ==
+
+= 1.8 =
+* Changed: code improvements.
 
 = 1.7 =
 * Changed: compatibility with MyD Delivery free version.
